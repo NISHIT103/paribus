@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - HOSPITAL_API_BASE=https://hospital-directory.onrender.com
+      - MAX_CSV_ROWS=20
+      - REQUEST_TIMEOUT=15
+    restart: unless-stopped
